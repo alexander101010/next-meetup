@@ -37,17 +37,26 @@ function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
 
-export async function getServerSideProps() {
-  // runs on the server after deployment, not during the build process
-}
-
-// export function getStaticProps() {
+// export async function getServerSideProps(context) {
+//   // runs on the server after deployment, not during the build process
+//   // can use credentials that shouldn't be exposed to users
+//   // fetch data from an API
+//   const req = context.req;
+//   const res = context.res;
 //   return {
 //     props: {
 //       meetups: DUMMY_MEETUPS,
 //     },
-//     revalidate: 1,
 //   };
 // }
+
+export function getStaticProps() {
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+    revalidate: 1,
+  };
+}
 
 export default HomePage;
