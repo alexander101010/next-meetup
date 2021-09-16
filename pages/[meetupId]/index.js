@@ -1,6 +1,5 @@
 // dynamic show page, folder name can have bracketed identifier
 import MeetupDetails from '../../components/meetups/MeetupDetails';
-import { Fragment } from 'react';
 
 function MeetupDetailsPage() {
   return (
